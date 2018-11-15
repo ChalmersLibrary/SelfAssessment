@@ -14,32 +14,28 @@
     <style type="text/css">
         ul.word-list {
             list-style-type: none;
+            clear: both;
         }
         
-        .word-list li {
+        .drop-zone li {
             position: relative;
             float: left;
             list-style-type: none;
-        }
-        
-        .word {
             border: 1px solid #666;
+            padding: 4px 2px 2px 4px;
+            margin: 0px 4px 4px 0px;
             font-size: 0.65em;
             font-family: sans-serif;
         }
         
-        #done li {
-            text-decoration: line-through;
-        }
-        
         .moving * {
             color: #BBB;
-            cursor: crosshair;
+            cursor: grab;
         }
         
         .drop-zone {
             padding: 1em 2em;
-            min-height: 2em;
+            min-height: 6em;
             border: 1px solid #DDD;
         }
         
@@ -55,35 +51,38 @@
             <div class="col-md-12">
                 <h1>Drag the words that describe different things</h1>
                 <ul class="word-list drop-zone">
-                    <li draggable="true" class="word">Empathic</li>
-                    <li draggable="true" class="word">Energetic</li>
-                    <li draggable="true" class="word">Evil</li>
-                    <li draggable="true" class="word">Neat and tidy</li>
-                    <li draggable="true" class="word">Better</li>
-                    <li draggable="true" class="word">Worse</li>
+                    <li draggable="true" class="word"><span>Empathic</span></li>
+                    <li draggable="true" class="word"><span>Energetic</span></li>
+                    <li draggable="true" class="word"><span>Evil</span></li>
+                    <li draggable="true" class="word"><span>Neat and tidy</span></li>
+                    <li draggable="true" class="word"><span>Better</span></li>
+                    <li draggable="true" class="word"><span>Worse</span></li>
                 </ul>
             </div>
         </div>
-
-        <section id="to-do">
-            <h2>To do</h2>
-            <ul class="drop-zone">
-                <li draggable="true"><span>Clean up the house.</span></li>
-                <li draggable="true"><span>Do the shopping.</span></li>
-                <li draggable="true"><span>Water the plants.</span></li>
-            </ul>
-        </section>
-
-        <section id="done">
-            <h2>Done!</h2>
-            <ul class="drop-zone" id="zone1">
-            </ul>
-            <ul class="drop-zone" id="zone2">
-            </ul>
-            <ul class="drop-zone" id="zone3">
-            </ul>
-        </section>
-
+        <div class="row">
+            <div class="col-md-4">
+                <section id="improve">
+                    <h2>Improve</h2>
+                    <ul class="drop-zone" id="zone1">
+                    </ul>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section id="decrease">
+                    <h2>Decrease</h2>
+                    <ul class="drop-zone" id="zone2">
+                    </ul>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section id="me">
+                    <h2>Describes me</h2>
+                    <ul class="drop-zone" id="zone3">
+                    </ul>
+                </section>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
