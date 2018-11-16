@@ -51,6 +51,10 @@ dropZones.forEach(function(dropZone) {
         if (dropZone === currentlyDragging.parentNode)
             return;
 
+        // Ignore dropping if max items already in list
+        if (dropZone.dataset.maxitems !== '' && dropZone.getElementsByTagName("li").length >= dropZone.dataset.maxitems)
+            return;
+
         // The new item
         var newLi = document.createElement('li');
         newLi.innerHTML = evt.dataTransfer.getData('text/html');
