@@ -138,22 +138,89 @@ var words = [
     { title: "Warm", selection: 0 },
     { title: "Wasteful", selection: 0 },
     { title: "Wise", selection: 0 },
-    { title: "Zealous", selection: 0 }  
-  ];
+    { title: "Zealous", selection: 0 }
+];
 
 $.each(words, function(index, value) {
+    addWord("zone0", value.title);
+});
+
+function addWord(zone, word) {
     var listElement = document.createElement("li");
     listElement.setAttribute("draggable", "true");
 
     var wordElement = document.createElement("span");
-    wordElement.textContent = value.title;
+    wordElement.textContent = word;
 
     listElement.appendChild(wordElement);
 
-    outerListElement = document.getElementById("zone0");
+    outerListElement = document.getElementById(zone);
     outerListElement.appendChild(listElement);
-});
+}
 
 $(document).ready(function() {
 
 });
+
+function demo() {
+    addWord("zone1", "Understanding");
+    addWord("zone1", "Unrealistic");
+    addWord("zone1", "Serious");
+    addWord("zone2", "Understanding");
+    addWord("zone2", "Neat and tidy");
+    addWord("zone2", "Impulsive");
+    for (i = 0; i <= 10; i++) {
+        addWord("zone3", words[i].title);
+    }
+}
+
+function savePDF() {
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    console.log(pdf.getFontList());
+
+    pdf.setFont("helvetica", "bold");
+
+    pdf.setFontSize(72);
+    pdf.text(17, 40, "This is YOU.");
+
+    pdf.setFontSize(12);
+    pdf.setDrawColor("#bbbbbb");
+
+    // Strengths
+    pdf.text(17, 70, "Strengths");
+
+    // Improve
+    pdf.text(70, 70, "Improve");
+    pdf.text(117, 70, "How?");
+    pdf.rect(117, 74, 76, 60, "S");
+
+    // Tone down
+    pdf.text(70, 150, "Tone down");
+    pdf.text(117, 150, "How?");
+    pdf.rect(117, 154, 76, 60, "S");
+
+    // Job
+    pdf.text(17, 230, "What does your current job require?");
+    pdf.rect(17, 234, 176, 40, "S");
+
+    pdf.setFontSize(12);
+    pdf.setFont("helvetica", "normal");
+
+    // Strength words
+    $('#zone3 li span').each(function(index, node) {
+        pdf.text(17, (78 + (6 * index)), node.textContent);
+    });
+
+    // Improve words
+    $('#zone1 li span').each(function(index, node) {
+        pdf.text(70, (78 + (6 * index)), node.textContent);
+    });
+
+    // Tone down words
+    $('#zone2 li span').each(function(index, node) {
+        pdf.text(70, (158 + (6 * index)), node.textContent);
+    });
+
+    pdf.save("characteristics.pdf");
+}

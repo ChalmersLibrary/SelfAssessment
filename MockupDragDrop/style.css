@@ -1,0 +1,62 @@
+.card-title {
+    font-size: 3em;
+}
+
+ul.word-list {
+    list-style-type: none;
+    padding: 0;
+    clear: both;
+}
+
+.drop-zone li {
+    position: relative;
+    float: left;
+    list-style-type: none;
+    background-color: #666666;
+    border: 1px solid #666;
+    color: #FFF;
+    border-radius: 2px;
+    padding: 4px 2px 2px 4px;
+    margin: 0px 4px 4px 0px;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    min-width: 11em;
+}
+
+.drop-zone li:hover {
+    background-color: #ddd;
+    border: 1px solid #ddd;
+}
+
+.moving * {
+    color: #BBB;
+    cursor: grab;
+}
+
+.drop-zone {
+    padding: 1em 2em;
+    min-height: 6em;
+    border: 1px solid #DDD;
+}
+
+.drop-zone.over {
+    border: 1px solid black;
+}
+
+#zone1.drop-zone li {
+    background-color: #ffae00;
+    border: 1px solid #ffae00;
+    color: #FFF;
+}
+
+#zone2.drop-zone li {
+    background-color: #c7320d;
+    border: 1px solid #c7320d;
+    color: #FFF;
+}
+
+#zone3.drop-zone li {
+    background-color: #12813c;
+    border: 1px solid #12813c;
+    color: #FFF;
+}
