@@ -52,7 +52,7 @@ dropZones.forEach(function(dropZone) {
             return;
 
         // Ignore dropping if max items already in list
-        if (dropZone.dataset.maxitems !== '' && dropZone.getElementsByTagName("li").length >= dropZone.dataset.maxitems)
+        if (dropZone.dataset.maxitems !== '' && dropZone.getElementsByTagName("li").length >= parseInt(dropZone.dataset.maxitems))
             return;
 
         // The new item
