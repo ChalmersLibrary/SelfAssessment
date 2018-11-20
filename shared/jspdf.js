@@ -33,12 +33,14 @@ function savePDF() {
 
     // Improve words
     $('#zone1 li span').each(function(index, node) {
-        pdf.text(17, (102 + (6 * index)), (index + 1) + ". " + node.textContent);
+        if (index < parseInt($('#zone1').data("maxitems")))
+            pdf.text(17, (102 + (6 * index)), (index + 1) + ". " + node.textContent);
     });
 
     // Tone down words
     $('#zone2 li span').each(function(index, node) {
-        pdf.text(113, (102 + (6 * index)), (index + 1) + ". " + node.textContent);
+        if (index < parseInt($('#zone2').data("maxitems")))
+            pdf.text(113, (102 + (6 * index)), (index + 1) + ". " + node.textContent);
     });
 
     // Strength words
