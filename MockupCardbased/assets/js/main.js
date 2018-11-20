@@ -138,17 +138,116 @@ var words = [
     { title: "Warm", selection: 0 },
     { title: "Wasteful", selection: 0 },
     { title: "Wise", selection: 0 },
-    { title: "Zealous", selection: 0 }  
-  ];
+    { title: "Zealous", selection: 0 }
+];
 
 $(document).ready(function() {
     renderCard(0);
 });
 
+function addWord(zone, word) {
+    var listElement = document.createElement("li");
+    var wordElement = document.createElement("span");
+    wordElement.textContent = word;
+
+    listElement.appendChild(wordElement);
+
+    outerListElement = document.getElementById(zone);
+    outerListElement.appendChild(listElement);
+}
+
 function renderCard(index) {
     $('#mainCard .card-header .current').text(index + 1);
     $('#mainCard .card-header .total').text(words.length);
     $('#mainCard .card-body .card-title').text(words[index].title);
-    $('#mainCard .card-body .card-text').text("Just a sample description.");
-    $('#mainCard .card-header #stepForward').attr('onclick', 'renderCard(' + (index + 1) + ')');
+    $('#mainCard .card-body #describesMe').attr('onclick', 'addWord("zone3", "' + words[index].title + '"); renderCard(' + (index + 1) + ');');
+    $('#mainCard .card-body #improve').attr('onclick', 'addWord("zone1", "' + words[index].title + '"); renderCard(' + (index + 1) + ');');
+    $('#mainCard .card-body #toneDown').attr('onclick', 'addWord("zone2", "' + words[index].title + '"); renderCard(' + (index + 1) + ');');
+    $('#mainCard .card-body #stepForward').attr('onclick', 'renderCard(' + (index + 1) + ')');
+}
+
+// Should be in common js file that is loaded into both mockups...
+
+function savePDF() {
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    console.log(pdf.getFontList());
+
+    pdf.setFont("helvetica", "bold");
+
+    pdf.setFontSize(72);
+    pdf.text(17, 40, "This is YOU.");
+
+    // Title font
+    pdf.setFontSize(20);
+
+    // Titles
+    pdf.text(17, 60, "Strengths");
+    pdf.text(17, 94, "Improve");
+    pdf.text(113, 94, "Tone down");
+
+    pdf.setFontSize(12);
+    pdf.setDrawColor("#bbbbbb");
+
+    // Improve
+    pdf.text(17, 126, "How are you to improve this?");
+    pdf.rect(17, 130, 80, 80, "S");
+
+    // Tone down
+    pdf.text(113, 126, "How are you to tone down this?");
+    pdf.rect(113, 130, 80, 80, "S");
+
+    // Job
+    pdf.text(17, 230, "What characteristics does your current job require?");
+    pdf.rect(17, 234, 176, 40, "S");
+
+    pdf.setFontSize(12);
+    pdf.setFont("helvetica", "normal");
+
+    // Improve words
+    $('#zone1 li span').each(function(index, node) {
+        pdf.text(17, (102 + (6 * index)), (index + 1) + ". " + node.textContent);
+    });
+
+    // Tone down words
+    $('#zone2 li span').each(function(index, node) {
+        pdf.text(113, (102 + (6 * index)), (index + 1) + ". " + node.textContent);
+    });
+
+    // Strength words
+    var strength = $('#zone3 li span');
+
+    //Insert strength words
+    if (strength[0] != undefined) {
+        pdf.text(17, 68, "1. " + strength[0].textContent);
+    }
+
+    if (strength[1] != undefined) {
+        pdf.text(17, 74, "2. " + strength[1].textContent);
+    }
+
+    if (strength[2] != undefined) {
+        pdf.text(65, 68, "3. " + strength[2].textContent);
+    }
+
+    if (strength[3] != undefined) {
+        pdf.text(65, 74, "4. " + strength[3].textContent);
+    }
+
+    if (strength[4] != undefined) {
+        pdf.text(113, 68, "5. " + strength[3].textContent);
+    }
+
+    if (strength[5] != undefined) {
+        pdf.text(113, 74, "6. " + strength[5].textContent);
+    }
+    //$('#zone3 li span').each(function(index, node) {
+    //  pdf.text(17, (78 + (6 * index)), node.textContent);
+    //});
+
+    //$('#zone3 li span').each(function(index, node) {
+    //    pdf.text(17, (78 + (6 * index)), node.textContent);
+    //});    
+
+    pdf.save("characteristics.pdf");
 }
