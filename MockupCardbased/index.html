@@ -28,10 +28,10 @@
             <div class="col-md-12">
                 <div class="card" id="mainCard">
                     <h5 class="card-header">
-                        <span class="current"></span>/<span class="total"></span>
+                        <span class="current">1</span>/<span class="total">140</span>
                     </h5>
                     <div class="card-body">
-                        <h3 class="card-title">Responsible</h3>
+                        <h3 class="card-title">[Word placeholder]</h3>
                         <a id="describesMe" href="#" class="btn btn-success btn-lg">
                             <i class="far fa-check-circle"></i> Describes me
                         </a>
@@ -50,17 +50,44 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <ul style="display:block;" id="zone3"></ul>
+                <section id="me">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Strengths</h5>
+                            <p class="card-text">Select a maximum of six characteristics that are your biggest strengths.</p>
+                            <ul class="drop-zone" id="zone3" data-maxitems="6">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="col-md-4">
-                <ul style="display:block;" id="zone1"></ul>
+                <section id="improve">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Improve</h5>
+                            <p class="card-text">Select a maximum of three characteristics that you'd most want to improve.</p>
+                            <ul class="drop-zone" id="zone1" data-maxitems="3">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="col-md-4">
-                <ul style="display:block;" id="zone2"></ul>
+                <section id="decrease">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tone down</h5>
+                            <p class="card-text">Select a maximum of three characteristics that you'd most want to tone down.</p>
+                            <ul class="drop-zone" id="zone2" data-maxitems="3">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="margin-top: 36px;">
                 <h1>Final things</h1>
                 <a class="btn btn-success" style="color:white;" onclick="savePDF()">Save your selections as PDF...</a>
             </div>
@@ -74,6 +101,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="../shared/jspdf.js"></script>
 </body>
 
 </html>
