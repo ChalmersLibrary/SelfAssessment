@@ -15,9 +15,9 @@ ul {
     position: relative;
     float: left;
     list-style-type: none;
-    background-color: #807e7e;
-    border: 1px solid #807e7e;
-    color: #FFF;
+    background-color: rgb(233, 233, 233);
+    border: 1px solid rgb(233, 233, 233);
+    color: rgb(0, 0, 0);
     border-radius: 2px;
     padding: 4px 2px 2px 4px;
     margin: 0px 4px 4px 0px;
@@ -27,9 +27,9 @@ ul {
 }
 
 .drop-zone li:hover {
-    background-color: #ddd;
-    border: 1px solid #ddd;
-    color: rgb(0, 0, 0);
+    background-color: #807e7e;
+    border: 1px solid #807e7e;
+    color: #FFF;
 }
 
 .moving * {
@@ -49,19 +49,19 @@ ul {
 }
 
 #zone1.drop-zone li {
-    background-color: #ff9e2e;
-    border: 1px solid #ff9e2e;
-    color: #FFF;
+    background-color: #ffdbb1;
+    border: 1px solid #ffdbb1;
+    color: rgb(0, 0, 0);
 }
 
 #zone2.drop-zone li {
-    background-color: #df5938;
-    border: 1px solid #df5938;
-    color: #FFF;
+    background-color: #ffad99;
+    border: 1px solid #ffad99;
+    color: rgb(0, 0, 0);
 }
 
 #zone3.drop-zone li {
-    background-color: #32a860;
-    border: 1px solid #32a860;
-    color: #FFF;
+    background-color: #abdbaf;
+    border: 1px solid #abdbaf;
+    color: rgb(0, 0, 0);
 }
