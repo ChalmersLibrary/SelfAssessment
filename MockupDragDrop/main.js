@@ -188,16 +188,16 @@ function savePDF() {
     pdf.setDrawColor("#bbbbbb");
 
     // Strengths
-    pdf.text(17, 70, "Strengths");
+    pdf.text(17, 70, "My strengths");
 
     // Improve
     pdf.text(70, 70, "Improve");
-    pdf.text(117, 70, "How?");
+    pdf.text(117, 70, "How are you to improve this?");
     pdf.rect(117, 74, 76, 60, "S");
 
     // Tone down
     pdf.text(70, 150, "Tone down");
-    pdf.text(117, 150, "How?");
+    pdf.text(117, 150, "How are you to tone down this?");
     pdf.rect(117, 154, 76, 60, "S");
 
     // Job
