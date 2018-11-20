@@ -222,33 +222,33 @@ function savePDF() {
 
     // Strength words
     var strength = $('#zone3 li span');
-    
+
     //Insert strength words
     if (strength[0] != undefined) {
-        pdf.text(17, 68, "1. " + strength[0].textContent); 
+        pdf.text(17, 68, "1. " + strength[0].textContent);
     }
 
     if (strength[1] != undefined) {
-        pdf.text(17, 74, "2. " + strength[1].textContent); 
+        pdf.text(17, 74, "2. " + strength[1].textContent);
     }
 
     if (strength[2] != undefined) {
-        pdf.text(65, 68, "3. " + strength[2].textContent); 
+        pdf.text(65, 68, "3. " + strength[2].textContent);
     }
 
     if (strength[3] != undefined) {
-        pdf.text(65, 74, "4. " + strength[3].textContent); 
+        pdf.text(65, 74, "4. " + strength[3].textContent);
     }
 
     if (strength[4] != undefined) {
-        pdf.text(113, 68, "5. " + strength[3].textContent); 
+        pdf.text(113, 68, "5. " + strength[4].textContent);
     }
 
     if (strength[5] != undefined) {
-        pdf.text(113, 74, "6. " + strength[5].textContent); 
+        pdf.text(113, 74, "6. " + strength[5].textContent);
     }
     //$('#zone3 li span').each(function(index, node) {
-      //  pdf.text(17, (78 + (6 * index)), node.textContent);
+    //  pdf.text(17, (78 + (6 * index)), node.textContent);
     //});
 
     //$('#zone3 li span').each(function(index, node) {

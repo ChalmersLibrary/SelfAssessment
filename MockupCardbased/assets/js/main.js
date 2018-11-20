@@ -171,11 +171,9 @@ function renderCard(index) {
 function savePDF() {
     const pdf = new jsPDF("p", "mm", "a4");
 
-    console.log(pdf.getFontList());
-
     pdf.setFont("helvetica", "bold");
-
     pdf.setFontSize(72);
+
     pdf.text(17, 40, "This is YOU.");
 
     // Title font
@@ -235,19 +233,12 @@ function savePDF() {
     }
 
     if (strength[4] != undefined) {
-        pdf.text(113, 68, "5. " + strength[3].textContent);
+        pdf.text(113, 68, "5. " + strength[4].textContent);
     }
 
     if (strength[5] != undefined) {
         pdf.text(113, 74, "6. " + strength[5].textContent);
     }
-    //$('#zone3 li span').each(function(index, node) {
-    //  pdf.text(17, (78 + (6 * index)), node.textContent);
-    //});
-
-    //$('#zone3 li span').each(function(index, node) {
-    //    pdf.text(17, (78 + (6 * index)), node.textContent);
-    //});    
 
     pdf.save("characteristics.pdf");
 }
