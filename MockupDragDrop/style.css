@@ -49,19 +49,19 @@ ul.word-list {
 }
 
 #zone1.drop-zone li {
-    background-color: #ffae00;
-    border: 1px solid #ffae00;
+    background-color: #ff9e2e;
+    border: 1px solid #ff9e2e;
     color: #FFF;
 }
 
 #zone2.drop-zone li {
-    background-color: #c7320d;
-    border: 1px solid #c7320d;
+    background-color: #df5938;
+    border: 1px solid #df5938;
     color: #FFF;
 }
 
 #zone3.drop-zone li {
-    background-color: #12813c;
-    border: 1px solid #12813c;
+    background-color: #32a860;
+    border: 1px solid #32a860;
     color: #FFF;
 }

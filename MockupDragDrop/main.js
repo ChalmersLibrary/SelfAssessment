@@ -191,9 +191,11 @@ function savePDF() {
     pdf.text(17, 70, "My strengths");
 
     // Improve
-    pdf.text(70, 70, "Improve");
-    pdf.text(117, 70, "How are you to improve this?");
-    pdf.rect(117, 74, 76, 60, "S");
+    pdf.text(17, 94, "Improve");
+    pdf.text(17, 120, "How are you to improve this?");
+    pdf.rect(17, 124, 86, 60, "S");
+
+    
 
     // Tone down
     pdf.text(70, 150, "Tone down");
@@ -207,15 +209,45 @@ function savePDF() {
     pdf.setFontSize(12);
     pdf.setFont("helvetica", "normal");
 
-    // Strength words
-    $('#zone3 li span').each(function(index, node) {
-        pdf.text(17, (78 + (6 * index)), node.textContent);
-    });
-
     // Improve words
     $('#zone1 li span').each(function(index, node) {
-        pdf.text(70, (78 + (6 * index)), node.textContent);
+        pdf.text(17, (102 + (6 * index)), node.textContent);
     });
+
+    // Strength words
+    var strength = $('#zone3 li span');
+    
+    //Print strength words
+    if (strength[0] != undefined) {
+        pdf.text(17, 78, strength[0].textContent); 
+    }
+
+    if (strength[1] != undefined) {
+        pdf.text(77, 78, strength[1].textContent); 
+    }
+
+    if (strength[2] != undefined) {
+        pdf.text(137, 78, strength[2].textContent); 
+    }
+
+    if (strength[3] != undefined) {
+        pdf.text(17, 84, strength[3].textContent); 
+    }
+
+    if (strength[4] != undefined) {
+        pdf.text(77, 84, strength[3].textContent); 
+    }
+
+    if (strength[5] != undefined) {
+        pdf.text(137, 84, strength[5].textContent); 
+    }
+    //$('#zone3 li span').each(function(index, node) {
+      //  pdf.text(17, (78 + (6 * index)), node.textContent);
+    //});
+
+    //$('#zone3 li span').each(function(index, node) {
+    //    pdf.text(17, (78 + (6 * index)), node.textContent);
+    //});    
 
     // Tone down words
     $('#zone2 li span').each(function(index, node) {
