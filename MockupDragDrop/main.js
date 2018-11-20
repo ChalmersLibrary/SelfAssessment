@@ -169,7 +169,7 @@ function demo() {
     addWord("zone2", "Understanding");
     addWord("zone2", "Neat and tidy");
     addWord("zone2", "Impulsive");
-    for (i = 0; i <= 6; i++) {
+    for (i = 0; i <= 5; i++) {
         addWord("zone3", words[i].title);
     }
 }
