@@ -25,8 +25,8 @@ function savePDF() {
     pdf.rect(113, 130, 80, 80, "S");
 
     // Job
-    pdf.text(17, 230, "What characteristics does your current job require?");
-    pdf.rect(17, 234, 176, 40, "S");
+    pdf.text(17, 226, "What characteristics does your current job require?");
+    pdf.rect(17, 230, 176, 40, "S");
 
     pdf.setFontSize(12);
     pdf.setFont("helvetica", "normal");
@@ -70,6 +70,13 @@ function savePDF() {
     if (strength[5] != undefined) {
         pdf.text(113, 74, "6. " + strength[5].textContent);
     }
+
+    // Footer information
+    pdf.setFontSize(8);
+    pdf.setFont("helvetica", "normal");
+
+    pdf.text(17, 280, "This personal characteristics assessment test is printed from Chalmers Canvas module X.");
+    pdf.text(17, 284, "Visit canvas.chalmers.se for more information. (footer with (C) and/or info)");
 
     pdf.save("characteristics.pdf");
 }
