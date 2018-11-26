@@ -52,7 +52,7 @@ var words = [
     { title: "Funny", selection: 0 },
     { title: "Fussy", selection: 0 },
     { title: "Generous", selection: 0 },
-    { title: "Goal oriented", selection: 0 },
+    { title: "Goal-oriented", selection: 0 },
     { title: "Grumpy", selection: 0 },
     { title: "Hard-working", selection: 0 },
     { title: "Headstrong", selection: 0 },
@@ -99,7 +99,7 @@ var words = [
     { title: "Quick", selection: 0 },
     { title: "Quiet", selection: 0 },
     { title: "Realistic", selection: 0 },
-    { title: "Relationship-oriented", selection: 0 },
+    { title: "Relation-oriented", selection: 0 },
     { title: "Representative", selection: 0 },
     { title: "Reserved", selection: 0 },
     { title: "Resigned", selection: 0 },
@@ -122,7 +122,7 @@ var words = [
     { title: "Suspicious", selection: 0 },
     { title: "Systematic", selection: 0 },
     { title: "Talkative", selection: 0 },
-    { title: "Task oriented", selection: 0 },
+    { title: "Task-oriented", selection: 0 },
     { title: "Thorough", selection: 0 },
     { title: "Tidy", selection: 0 },
     { title: "Tolerant", selection: 0 },
@@ -165,7 +165,7 @@ function demo() {
     addWord("zone2", "Understanding");
     addWord("zone2", "Neat and tidy");
     addWord("zone2", "Impulsive");
-    for (i = 0; i <= 5; i++) {
+    for (i = 0; i <= 9; i++) {
         addWord("zone3", words[i].title);
     }
 }

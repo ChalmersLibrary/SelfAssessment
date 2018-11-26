@@ -6,7 +6,7 @@ function savePDF() {
     pdf.text(17, 40, "This is YOU.");
 
     // Title font
-    pdf.setFontSize(20);
+    pdf.setFontSize(18);
 
     // Titles
     pdf.text(17, 60, "Strengths");
@@ -28,7 +28,7 @@ function savePDF() {
     pdf.text(17, 226, "What characteristics does your current job require?");
     pdf.rect(17, 230, 176, 40, "S");
 
-    pdf.setFontSize(12);
+    pdf.setFontSize(10);
     pdf.setFont("helvetica", "normal");
 
     // Improve words
@@ -56,19 +56,35 @@ function savePDF() {
     }
 
     if (strength[2] != undefined) {
-        pdf.text(65, 68, "3. " + strength[2].textContent);
+        pdf.text(52.2, 68, "3. " + strength[2].textContent);
     }
 
     if (strength[3] != undefined) {
-        pdf.text(65, 74, "4. " + strength[3].textContent);
+        pdf.text(52.2, 74, "4. " + strength[3].textContent);
     }
 
     if (strength[4] != undefined) {
-        pdf.text(113, 68, "5. " + strength[4].textContent);
+        pdf.text(87.4, 68, "5. " + strength[4].textContent);
     }
 
     if (strength[5] != undefined) {
-        pdf.text(113, 74, "6. " + strength[5].textContent);
+        pdf.text(87.4, 74, "6. " + strength[5].textContent);
+    }
+
+    if (strength[6] != undefined) {
+        pdf.text(122.6, 68, "7. " + strength[6].textContent);
+    }
+
+    if (strength[7] != undefined) {
+        pdf.text(122.6, 74, "8. " + strength[7].textContent);
+    }
+
+    if (strength[8] != undefined) {
+        pdf.text(157.8, 68, "9. " + strength[8].textContent);
+    }
+
+    if (strength[9] != undefined) {
+        pdf.text(157.8, 74, "10. " + strength[9].textContent);
     }
 
     // Footer information
